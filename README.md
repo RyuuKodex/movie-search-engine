@@ -62,7 +62,7 @@ docker compose down --remove-orphans
 #### Run tests in the container
 
 ```bash
-composer run-unit-tests
+php bin/phpunit --do-not-cache-result --testsuite unit
 ```
 
 #### Run code lint in the container
