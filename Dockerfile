@@ -1,6 +1,6 @@
-FROM ghcr.io/archi-tektur/caddy-php:2.2.0 AS app
+FROM ghcr.io/archi-tektur/caddy-php:2.3.0 AS app
 
-ENV VERSION="2.0.0"
+ENV VERSION="1.0.0"
 
 COPY ./app /app
 RUN composer install

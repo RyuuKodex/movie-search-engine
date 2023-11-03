@@ -1,8 +1,15 @@
 parameters:
+    app.movie_file_path: '/app/data/movies.php'
+
 services:
     _defaults:
         autowire: true
         autoconfigure: true
+
+    _instanceof:
+        App\Domain\SearchEngine\Strategy\SearchEngineStrategyInterface:
+            tags: [ 'app.movie_search_engine_strategy' ]
+
     App\:
         resource: '../src/'
         exclude:
@@ -10,3 +17,11 @@ services:
             - '../src/Entity/'
             - '../src/Migrations/'
             - '../src/Kernel.php'
+
+    App\Domain\SearchEngine\SearchEngineStrategyProvider:
+        arguments:
+            - !tagged_iterator app.movie_search_engine_strategy
+
+    App\Infrastructure\Repository\MovieRepository:
+        arguments:
+            - '%app.movie_file_path%'

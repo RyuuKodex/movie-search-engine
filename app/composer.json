@@ -6,19 +6,18 @@
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
-        "php": ">=8.1",
+        "php": ">=8.2",
         "ext-ctype": "*",
         "ext-curl": "*",
         "ext-iconv": "*",
-        "doctrine/doctrine-bundle": "^2.6",
-        "doctrine/doctrine-migrations-bundle": "^3.2",
-        "doctrine/orm": "^2.11",
         "symfony/dotenv": "6.3.*",
         "symfony/flex": "^2",
         "symfony/framework-bundle": "6.3.*",
         "symfony/http-client": "6.3.*",
         "symfony/monolog-bundle": "^3.8",
+        "symfony/property-access": "6.3.*",
         "symfony/runtime": "6.3.*",
+        "symfony/serializer": "6.3.*",
         "symfony/yaml": "6.3.*"
     },
     "config": {
@@ -62,15 +61,6 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
-        ],
-        "run-unit-tests": "php bin/phpunit --do-not-cache-result --testsuite unit",
-        "run-functional-tests": "php bin/phpunit --do-not-cache-result --testsuite functional",
-        "run-lint-check": "./vendor/bin/php-cs-fixer fix --dry-run --using-cache no",
-        "run-lint-fix": "./vendor/bin/php-cs-fixer fix",
-        "run-phpstan-analysis": "./vendor/bin/phpstan analyse",
-        "run-all-tests": [
-            "@run-unit-tests",
-            "@run-functional-tests"
         ]
     },
     "conflict": {
