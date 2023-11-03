@@ -31,6 +31,7 @@ ln -s ./etc/envs/compose.dev.yaml .
    composer install
    chown -R $(id -u):$(id -g) .
    "
+5. Now you're all set, you can visit the localhost with port 80, you should see the Symfony default application web page.
 ## Endpoint
 
 #### 
